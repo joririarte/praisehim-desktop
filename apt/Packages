@@ -1,0 +1,15 @@
+Package: praise-him
+Version: 1.0.0
+Architecture: amd64
+Maintainer: com
+Installed-Size: 26213
+Depends: libwebkit2gtk-4.1-0, libgtk-3-0
+Filename: ./praisehim-escritorio-linux-amd64.deb
+Size: 8103022
+MD5sum: 27a2044f788ad305d2183e6fbb4e8c37
+SHA1: cad998caf519f9b41996c6a0a7806af41db98ddf
+SHA256: 8c8a5f496c7f241a3bea5282b3c1fa1dce9b6f5c46b88abeb7ea1d37bca394ca
+Priority: optional
+Description: PraiseHim de escritorio
+ (none)
+
