@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PraiseHim para escritorio</title>
+<style>
+  :root { color-scheme: light dark; --texto: #1a1625; --tenue: #5b5470; --linea: #e4e0ec; --fondo: #faf9fc; --acento: #7c4dff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --texto: #ece9f5; --tenue: #a39fb5; --linea: #2b2740; --fondo: #141221; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 48px 20px; background: var(--fondo); color: var(--texto);
+         font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.9rem; margin: 0 0 8px; }
+  h2 { font-size: 1.1rem; margin: 36px 0 10px; }
+  p { color: var(--tenue); margin: 0 0 14px; }
+  .botones { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 8px; }
+  a.btn { display: inline-block; padding: 10px 18px; border-radius: 10px; text-decoration: none;
+          border: 1px solid var(--linea); color: var(--texto); font-weight: 600; }
+  a.btn.primario { background: var(--acento); border-color: var(--acento); color: #fff; }
+  pre { background: rgba(127,127,127,0.12); border: 1px solid var(--linea); border-radius: 10px;
+        padding: 14px 16px; overflow-x: auto; font-size: 0.88rem; }
+  footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--linea);
+           color: var(--tenue); font-size: 0.86rem; }
+  a { color: var(--acento); }
+</style>
+</head>
+<body>
+<main>
+  <h1>PraiseHim para escritorio</h1>
+  <p>
+    Se instala en la computadora que proyecta y abre el proyector y el monitor de retorno en su
+    pantalla, sin permisos ni ventanas que acomodar. Reconoce cada monitor aunque cambies los
+    cables. <strong>Se puede usar con cualquier plan.</strong>
+  </p>
+
+  <div class="botones">
+    <a class="btn primario" href="https://github.com/joririarte/praisehim-desktop/releases/latest/download/praisehim-escritorio-windows-x64-setup.exe">Windows</a>
+    <a class="btn" href="https://github.com/joririarte/praisehim-desktop/releases/latest/download/praisehim-escritorio-linux-amd64.deb">Linux (.deb)</a>
+    <a class="btn" href="https://praisehim.com.ar/#descargas">Más información</a>
+  </div>
+  <p>
+    En Windows puede que aparezca un aviso antes de abrir el instalador: elegí
+    <em>Más información → Ejecutar de todas formas</em>.
+  </p>
+
+  <h2>Que Linux la actualice sola</h2>
+  <p>
+    Un <code>.deb</code> instalado a mano no se actualiza nunca. Agregando el repositorio, la app
+    se actualiza con el resto del sistema:
+  </p>
+<pre>curl -fsSL https://joririarte.github.io/praisehim-desktop/praisehim-apt.asc \
+  | sudo gpg --dearmor -o /usr/share/keyrings/praisehim.gpg
+echo "deb [signed-by=/usr/share/keyrings/praisehim.gpg] https://joririarte.github.io/praisehim-desktop/apt ./" \
+  | sudo tee /etc/apt/sources.list.d/praisehim.list
+sudo apt update &amp;&amp; sudo apt install praisehim-escritorio</pre>
+  <p>Desde ahí, <code>sudo apt upgrade</code> la mantiene al día. En Windows se actualiza sola.</p>
+
+  <footer>
+    Acá se publican solo los binarios: el código de PraiseHim vive en un repositorio privado. El
+    sitio es <a href="https://praisehim.com.ar">praisehim.com.ar</a>.
+  </footer>
+</main>
+</body>
+</html>
